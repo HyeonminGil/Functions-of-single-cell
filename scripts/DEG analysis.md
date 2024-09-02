@@ -10,7 +10,7 @@ plan()  # sequential
 plan("multicore", workers = 30)
 plan()
 ```
-
+---
 ### 2. Functions of DEG analysis within the same cell type across conditions
 It can be applied to RNA or ATAC sequencing data.
 ```R
@@ -54,8 +54,8 @@ FindMarkers_CD <- function(InputData, CelltypeList, GroupList, GroupName) {
         return(DEG_out)
     }
 ```
-
-### 3. Application
+---
+### 3. Application in R
 ```R
 # Run the functions
 execution.time <- system.time(
