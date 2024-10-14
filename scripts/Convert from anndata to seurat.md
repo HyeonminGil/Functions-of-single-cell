@@ -47,8 +47,8 @@ tmp <- Connect(glue("{dirdata}IATEAT_APC_for_R.loom"), mode = "r")
 seurat <- as.Seurat(tmp, features = "gene_ids", cells = "barcode")
 
 # UMAP
-tmp_UMAP <- read.csv(glue("{dirdata}IATEAT_APC_umap_for_R_meta.csv"), row.names = 1) %>%
-  rename(test_UMAP, "UMAP_1" = "x", "UMAP_2" = "y") %>%
+mat_UMAP <- read.csv(glue("{dirdata}IATEAT_APC_umap_for_R_meta.csv"), row.names = 1) %>%
+  rename("UMAP_1" = "x", "UMAP_2" = "y") %>%
   as("matrix")
 seurat[["umap"]] <- CreateDimReducObject(embeddings = mat_UMAP, key = "UMAP_", global = TRUE, assay = "RNA")
 
