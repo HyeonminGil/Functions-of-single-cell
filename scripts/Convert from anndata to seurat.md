@@ -42,6 +42,7 @@ library(SeuratDisk)
 library(Seurat)
 library(glue)
 library(dplyr)
+library(qs)
 
 tmp <- Connect(glue("{dirdata}IATEAT_APC_for_R.loom"), mode = "r")
 
@@ -54,6 +55,8 @@ mat_UMAP <- read.csv(glue("{dirdata}IATEAT_APC_umap_for_R_meta.csv"), row.names 
   as("matrix")
 seurat[["umap"]] <- CreateDimReducObject(embeddings = mat_UMAP, key = "UMAP_", global = TRUE, assay = "RNA")
 
+# Save seurat object as *.qs
+qsave(seurat, glue("{dirdata}IATEAT_APC_for_R.qs"))
 ```
 
 
