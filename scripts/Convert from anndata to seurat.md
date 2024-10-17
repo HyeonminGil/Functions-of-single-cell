@@ -40,6 +40,8 @@ adata_tmp.write_loom(f'{dirdata}IATEAT_APC_for_R.loom')
 ```R
 library(SeuratDisk)
 library(Seurat)
+library(glue)
+library(dplyr)
 
 tmp <- Connect(glue("{dirdata}IATEAT_APC_for_R.loom"), mode = "r")
 
