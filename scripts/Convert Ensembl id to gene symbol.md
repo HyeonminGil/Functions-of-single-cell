@@ -1,6 +1,6 @@
 ## 1. with gprofiler2
 
-''' R
+``` R
 library(gprofiler2)
 
 gene_name <- gconvert(
@@ -20,4 +20,4 @@ dds
 
 rownames(dds) <- gene_name$target[matched_idx[valid_rows]]
 head(rownames(dds))
-'''
+```
