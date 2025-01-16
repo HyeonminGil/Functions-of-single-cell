@@ -1,4 +1,4 @@
-``R
+```R
 ## Downsamping function
 downsample_cells <- function(seurat_obj, group_column, n_cells) {
   
@@ -24,4 +24,4 @@ n_cells <- 1500
 
 seurat_down <- downsample_cells(subset(seurat, subset = ct_level1 != "MC"), group_column, n_cells)
 seurat_down
-``
+```
